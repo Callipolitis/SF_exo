@@ -14,13 +14,23 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/plat')]
 class PlatController extends AbstractController
 {
-    #[Route('/', name: 'plat_index', methods: ['GET'])]
+ /*   #[Route('/', name: 'plat_index', methods: ['GET'])]
     public function index(PlatRepository $platRepository): Response
     {
         return $this->render('plat/index.html.twig', [
             'plats' => $platRepository->findAll(),
         ]);
     }
+*/
+    #[Route('/plats', name: 'plat_index', methods: ['GET'])]
+        public function index(PlatRepository $platRepository): Response
+        {
+            return $this->render('plat/index.html.twig', [
+                'plats' => $platRepository->findAll(),
+            ]);
+        }
+
+
 
     #[Route('/new', name: 'plat_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response

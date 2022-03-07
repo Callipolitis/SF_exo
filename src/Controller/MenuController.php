@@ -8,9 +8,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MenuController extends AbstractController
 {
-    #[Route('/', name: 'menu')]
+   /* #[Route('/', name: 'menu')]
     public function index(): Response
     {
         return $this->redirectToRoute('plat_index');
+    }*/
+
+    #[Route('/', name: 'menu')]
+    public function index(): Response
+    {
+        return $this->render('menu/index.html.twig');
     }
 }
